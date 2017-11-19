@@ -67,8 +67,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './public/manifest.json' },
       { context: './src/assets', from: 'icon-**', to: 'assets' },
-      { from: './public/fonts' },
-      { from: './public/css' }
+      { from: './public/fonts', to: 'fonts'  },
+      { from: './public/css', to: 'css'  }
       
     ])
   ]
