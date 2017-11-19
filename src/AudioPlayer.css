@@ -1,9 +1,12 @@
 /* Player */
+#root {
+    margin: 0px;
+}
 .no-height {
   height: 0 !important;
 }
 .player-container {
-  width: 435px;
+  width: 200px;
   margin: 0 auto;
   overflow: hidden;
   background-color: #EAEDEF;
@@ -11,13 +14,10 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .player-cover {
-  height: 160px;
-  background-position: top center;
-  background-size: cover;
-  transition: height .4s;
+  display: none;
 }
 .artist-info {
-  padding: 60px 35px 35px;
+  padding: 30px 35px 30px;
 }
 .artist-name,
 .artist-song-name {
@@ -34,7 +34,7 @@
 }
 .player-progress-container {
   position: relative;
-  width: 365px;
+  width: 200px;
   height: 9px;
   margin: 0 auto;
   background-color: #414141;
@@ -62,8 +62,8 @@
 .player-options {
   display: flex;
   justify-content: space-between;
-  padding: 40px 0 20px;
-  width: 365px;
+  padding: 20px 20px 20px 20px;
+  width: 200px;
   margin: 0 auto;
 }
 .player-buttons {

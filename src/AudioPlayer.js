@@ -36,7 +36,7 @@ class AudioPlayer extends PureComponent {
       progress: 0,
       random: false,
       playing: !!props.autoplay,
-      repeat: false,
+      repeat: true,
       mute: false,
     };
 
@@ -182,36 +182,17 @@ class AudioPlayer extends PureComponent {
       progress,
       active,
       playing,
-      mute,
-      random,
-      repeat,
     } = this.state;
 
     const coverClass = classnames({
-      'player-cover': true,
-      'no-height': !!active.cover === false,
+      'player-cover': false,
+      'no-height': !!active.cover === true,
     });
 
     const playPauseClass = classnames({
       'fa': true,
       'fa-play': !playing,
       'fa-pause': playing,
-    });
-
-    const volumeClass = classnames({
-      'fa': true,
-      'fa-volume-up': !mute,
-      'fa-volume-off': mute,
-    });
-
-    const randomClass = classnames({
-      'player-btn small random': true,
-      'active': random,
-    })
-
-    const repeatClass = classnames({
-      'player-btn small repeat': true,
-      'active': repeat,
     });
 
 		return (
@@ -231,49 +212,25 @@ class AudioPlayer extends PureComponent {
         <div className="player-options">
           <div className="player-buttons player-controls">
             <button
+              onClick={this.previous}
+              className="player-btn small"
+              title="Previous Song"
+            >
+              <i className="fa fa-backward"></i>
+            </button>
+             <button
               onClick={this.toggle}
-              className="player-btn big"
+              className="player-btn medium"
               title="Play/Pause"
             >
               <i className={playPauseClass}></i>
             </button>
             <button
-              onClick={this.previous}
-              className="player-btn medium"
-              title="Previous Song"
-            >
-              <i className="fa fa-backward"></i>
-            </button>
-            <button
               onClick={this.next}
-              className="player-btn medium"
+              className="player-btn small"
               title="Next Song"
             >
               <i className="fa fa-forward"></i>
-            </button>
-          </div>
-
-          <div className="player-buttons">
-            <button
-              className="player-btn small volume"
-              onClick={this.toggleMute}
-              title="Mute/Unmute"
-            >
-              <i className={volumeClass}></i>
-            </button>
-            <button
-              className={repeatClass}
-              onClick={this.repeat}
-              title="Repeat"
-            >
-              <i className="fa fa-repeat"></i>
-            </button>
-            <button
-              className={randomClass}
-              onClick={this.randomize}
-              title="Shuffle"
-            >
-              <i className="fa fa-random"></i>
             </button>
           </div>
         </div>

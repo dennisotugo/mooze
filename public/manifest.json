@@ -1,13 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
+  "manifest_version": 2,
+  "name": "Mooze",
+  "version": "versionString",
+
+  "default_locale": "en",
+  "description": "A plain text description",
+  "icons": {...},
+
+  "browser_action": {...},
+
+  "author": "Dennis Otugo",
+  "background": {
+    "persistent": true
+  },
+  "homepage_url": "https://github.com/bananas-and-trees/mooze",
+  "offline_enabled": true,
+  },
+  "permissions": ["tabs"],
+  "short_name": "Mooze",
+  },
+  "system_indicator": ...,
+  "tts_engine": {...},
+  "update_url": "http://path/to/updateInfo.xml",
+  "version_name": "aString",
+  "web_accessible_resources": [...]
 }
