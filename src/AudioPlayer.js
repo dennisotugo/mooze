@@ -93,6 +93,7 @@ class AudioPlayer extends PureComponent {
   play = () => {
     this.setState({
       playing: true,
+      repeat: true,
     });
 
     this.audio.play();
@@ -179,7 +180,6 @@ class AudioPlayer extends PureComponent {
   render() {
     const { 
       active: currentSong,
-      progress,
       active,
       playing,
     } = this.state;
@@ -202,11 +202,6 @@ class AudioPlayer extends PureComponent {
 
         <div className="artist-info">
           <h2 className="artist-name">{currentSong.artist.name}</h2>
-          <h3 className="artist-song-name">{currentSong.artist.song}</h3>
-        </div>
-
-        <div className="player-progress-container" onClick={e => this.setProgress(e)}>
-          <span className="player-progress-value" style={{width: progress + '%'}}></span>
         </div>
 
         <div className="player-options">

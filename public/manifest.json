@@ -6,7 +6,7 @@
 
   "author": "Dennis Otugo",
   "background": {
-    "persistent": true
+    "persistent": false
   },
   "homepage_url": "https://github.com/bananas-and-trees/mooze",
   "offline_enabled": true,
@@ -21,9 +21,9 @@
     "default_popup": "index.html"
   },
   "background": {
-    "scripts": ["AudioPlayer.bundle.js", "registerServiceWorker.bundle.js"]
+    "scripts": ["./src/AudioPlayer.js", "./src/registerServiceWorker.js"]
   },
   "permissions": ["activeTab", "tabs", "storage", "webRequest", "webRequestBlocking", "<all_urls>"]
-
-
+  
+  
 }
