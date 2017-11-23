@@ -1,29 +1,22 @@
 {
   "manifest_version": 2,
   "name": "Mooze",
-  "version": "0.0.1",
-  "description": "A plain text description",
+  "version": "0.0.2",
+  "description": "An amibance player",
 
-  "author": "Dennis Otugo",
+  "author": "Bananas & Trees",
+  "app": {
   "background": {
-    "persistent": false
+    "scripts": ["./background.js"]
+  }
   },
-  "homepage_url": "https://github.com/bananas-and-trees/mooze",
   "offline_enabled": true,
   "short_name": "Mooze",
   "icons": {
-    "64": "assets/icon-128.png",
-    "128": "assets/icon-256.png"
+    "64": "assets/Mooze.png",
+    "128": "assets/Mooze.png"
   },
-  "browser_action": {
-    "default_icon": "assets/icon-128.png",
-    "default_title": "Mooze",
-    "default_popup": "index.html"
-  },
-  "background": {
-    "scripts": ["./src/AudioPlayer.js", "./src/registerServiceWorker.js"]
-  },
-  "permissions": ["activeTab", "tabs", "storage", "webRequest", "webRequestBlocking", "<all_urls>"]
+  "permissions": ["storage", "<all_urls>"]
   
   
 }

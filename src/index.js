@@ -26,7 +26,7 @@ const songs = [
   {
     url: './coffee.mp3',
     artist: {
-      name: 'Coffee Shop'
+      name: 'Cafe'
     }
   },
   {

@@ -93,7 +93,7 @@ class AudioPlayer extends PureComponent {
   play = () => {
     this.setState({
       playing: true,
-      repeat: true,
+	  repeat: true,
     });
 
     this.audio.play();
@@ -180,13 +180,14 @@ class AudioPlayer extends PureComponent {
   render() {
     const { 
       active: currentSong,
+      progress,
       active,
       playing,
     } = this.state;
 
     const coverClass = classnames({
-      'player-cover': false,
-      'no-height': !!active.cover === true,
+      'player-cover': true,
+      'no-height': !!active.cover === false,
     });
 
     const playPauseClass = classnames({
@@ -202,27 +203,32 @@ class AudioPlayer extends PureComponent {
 
         <div className="artist-info">
           <h2 className="artist-name">{currentSong.artist.name}</h2>
+          <h3 className="artist-song-name">{currentSong.artist.song}</h3>
+        </div>
+
+        <div className="player-progress-container" onClick={e => this.setProgress(e)}>
+          <span className="player-progress-value" style={{width: progress + '%'}}></span>
         </div>
 
         <div className="player-options">
           <div className="player-buttons player-controls">
             <button
               onClick={this.previous}
-              className="player-btn small"
+              className="player-btn medium"
               title="Previous Song"
             >
               <i className="fa fa-backward"></i>
             </button>
-             <button
+			 <button
               onClick={this.toggle}
-              className="player-btn medium"
+              className="player-btn big"
               title="Play/Pause"
             >
               <i className={playPauseClass}></i>
             </button>
             <button
               onClick={this.next}
-              className="player-btn small"
+              className="player-btn medium"
               title="Next Song"
             >
               <i className="fa fa-forward"></i>
