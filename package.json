@@ -26,10 +26,10 @@
     "webpack-dev-server": "^3.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "yarn start",
+    "build": "yarn build",
+    "test": "yarn test --env=jsdom",
+    "eject": "yarn eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
