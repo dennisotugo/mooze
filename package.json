@@ -25,8 +25,9 @@
     "webpack": "^4.0.1",
     "webpack-dev-server": "^3.1.0"
   },
-  "scripts": {
+    "scripts": {
     "start": "yarn start",
     "build": "yarn build",
+    "test": "yarn test",
   }
 }
